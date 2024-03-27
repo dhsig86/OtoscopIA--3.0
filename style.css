@@ -1,9 +1,25 @@
+:root {
+  --primary: #5cc6ba;
+  --secondary: #a0a0a0;
+  --tertiary: #717F7F;
+  --quaternary: #F1F5F4;
+
+  
+}
+
+.container-style {
+    display: none;
+    width: 50px;
+    height: 30px;
+ }
+
+
 body {
     font-family: Arial, sans-serif;
-    background-color: #f5f5f5;
-    background-image: url("https://i.ibb.co/fd2ZtvY/Backgroundapp-1.png");
-    background-position: center;
-    background-repeat: no-repeat;
+    background-color: #ffffff;
+    /* background-image: url("https://i.ibb.co/fd2ZtvY/Backgroundapp-1.png"); */
+    /* background-position: center; */
+    /* background-repeat: no-repeat; */
     background-size: cover;
     margin: 0;
     padding: 0;
@@ -11,24 +27,33 @@ body {
 
 .container {
     background-color: #ffffff;
-    width: 70%;
+    width: 100vh;
     max-width: 900px;
     margin: 30px auto;
-    padding: 20px;
+    padding: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-h1 {
-    text-align: center;
-    color: #1c3f6d;
-    margin-bottom: 30px;
+.font-size{
+  font-size: 0.7em !important;
+  color: brown;
+  width: 50vh;
+  padding: 5px;
+  
+}
+
+.title {
+    /* text-align: center; */
+    color: var(--primary) !important;
+    /* margin-bottom: 30px; */
+    
 }
 
 .form-group {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 10px;
+    /* gap: 10px; */
 }
 
 input[type="file"] {
@@ -36,41 +61,51 @@ input[type="file"] {
 }
 
 label {
-    background-color: #1c3f6d;
-    color: #ffffff;
-    padding: 10px 20px;
+    background-color: #F1F5F4;
+    color: var(--tertiary);
+    /* padding: 10px 20px; */
     cursor: pointer;
-    border-radius: 5px;
+    border-radius: 15px;
+    width: 150px;
+    height: 100px;
+    text-align: center;
+    font-size: 1rem;
 }
 
-button {
+/* button {
     background-color: #1c3f6d;
     color: #ffffff;
     padding: 10px 20px;
     cursor: pointer;
     border-radius: 5px;
     border: none;
-}
+} */
 
 .card-container {
     display: flex;
     justify-content: center;
-    margin-top: 50px;
 }
 
 .card {
     background-color: #ffffff;
-    border-radius: 5px;
+    /* border-radius: 5px; */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     width: 70%;
-    max-width: 600px;
+    max-width: auto;
 }
 
 .card-header {
-    background-color: #1c3f6d;
-    border-radius: 5px 5px 0 0;
+    background-color: #F1F5F4;
+    /* border-radius: 15px 5px 0 0; */
     padding: 20px;
-    color: #ffffff;
+    color: var(--tertiary);
+    text-align: left;
+    
+}
+.card-header p{
+color: var(--tertiary);
+font-size: 1rem;
+
 }
 
 .card-body {
@@ -134,26 +169,26 @@ footer {
     margin-top: 20px;
 }
 
-@media only screen and (max-width: 768px) {
+@media screen and (max-width: 430px) {
   .container {
-    width: 90%;
-    padding: 15px;
+    width: 100vh;
+    padding: 2px;
   }
 
   h1 {
-    font-size: 1.6em;
+    font-size: 1.9em;
   }
 
   label,
   button {
-    font-size: 0.9em;
+    font-size: 1em;
     padding: 8px 16px;
   }
 }
 
-@media only screen and (max-width: 480px) {
+/* @media screen and (max-width: 980px) {
   .container {
-    width: 100%;
+    width: 100vh;
     padding: 10px;
   }
 
@@ -217,7 +252,4 @@ footer {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   background-color: #fff;
   margin-right: 20px;
-}
-
-.card-header {
-
+} */
