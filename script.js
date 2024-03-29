@@ -45,6 +45,14 @@ function displayImage(url) {
   imgContainer.innerHTML = `<img src="${url}" alt="uploaded image">`;
 }
 
+document.getElementById('resetBtn').addEventListener('click', function() {
+  window.location.reload();
+});
+
+document.getElementById('printerBtn').addEventListener('click', function() {
+  window.print();
+});
+
 // Display class labels in HTML
 function displayLabels(prediction) {
   const labelContainer = document.getElementById("label-container");
@@ -80,5 +88,10 @@ init();
 // Add event listener to input for image upload
 const imageUpload = document.getElementById("imageUpload");
 imageUpload.addEventListener("change", () => {
+  if(imageUpload.files.length > 0) {
+    document.getElementById('printerBtn').style.display = 'block';
+    document.getElementById('resetBtn').style.display = 'block';
+  }
   classify();
+
 });
