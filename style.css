@@ -72,14 +72,44 @@ label {
     font-size: 1rem;
 }
 
-/* button {
-    background-color: #1c3f6d;
-    color: #ffffff;
-    padding: 10px 20px;
-    cursor: pointer;
-    border-radius: 5px;
-    border: none;
-} */
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+#printerBtn {
+  padding: 20px 20px;
+  background-color: #226024;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+  display: none;
+  
+}
+
+#printerBtn:hover {
+  background-color: #549657;
+}
+
+
+#resetBtn {
+  padding: 20px 20px;
+  background-color: #960505;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+  display: none;
+  
+}
+
+#resetBtn {
+  background-color: #dd4007;
+}
 
 .card-container {
     display: flex;
@@ -99,7 +129,7 @@ label {
     /* border-radius: 15px 5px 0 0; */
     padding: 20px;
     color: var(--tertiary);
-    text-align: left;
+    text-align: center;
     
 }
 .card-header p{
@@ -157,10 +187,12 @@ font-size: 1rem;
 }
 
 #image-container img {
-    max-width: 100%;
-    display: block;
-    margin: 20px auto;
+  max-width: 100%; /* ou um valor específico como 400px */
+  max-height: 300px; /* altura máxima da imagem */
+  display: block;
+  margin: 20px auto;
 }
+
 
 footer {
     text-align: center;
@@ -185,6 +217,20 @@ footer {
     padding: 8px 16px;
   }
 }
+
+/*@media print {
+  body * {
+    visibility: hidden;
+  }
+  .card-header, .card-body {
+    visibility: visible;
+  }
+  .card-header, .card-body {
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+}/*
 
 /* @media screen and (max-width: 980px) {
   .container {
