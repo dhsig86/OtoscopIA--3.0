@@ -1,5 +1,5 @@
 // The link to your model provided by Teachable Machine export panel
-const URL = "https://teachablemachine.withgoogle.com/models/2HfnZVmEh/";
+const URL = "https://teachablemachine.withgoogle.com/models/o-1d0M-Cy/";
 
 let model, maxPredictions;
 
