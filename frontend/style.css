@@ -1,0 +1,263 @@
+:root {
+  --primary: #5cc6ba;
+  --secondary: #a0a0a0;
+  --tertiary: #717F7F;
+  --quaternary: #F1F5F4;
+  --btn-primary: #007bff;
+  --btn-success: #28a745;
+  --btn-danger: #dc3545;
+  --btn-warning: #d39e00;
+  --btn-warning-text: #212529;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #ffffff;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  background-color: #ffffff;
+  width: 100%;
+  max-width: 900px;
+  margin: 30px auto;
+  padding: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+label[for="imageUpload"] {
+  background-color: #F1F5F4;
+  color: var(--tertiary);
+  cursor: pointer;
+  border-radius: 20px;
+  width: 150px;
+  height:auto;
+  text-align: center;
+  font-size: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 10px;
+}
+
+#helpBtn {
+  background-color: var(--btn-primary);
+  border-radius: 15px;
+  font-size: 0.9rem;
+  color: white;
+  margin-top: 10px;
+  display: block;
+}
+
+#helpSection {
+  display: none;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+button {
+  padding: 10px 20px;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  margin: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+#classifyBtn, #cropBtn {
+  width: 200px;
+  margin: 10px auto;
+  display: none;
+}
+
+#resetBtn {
+  background-color: var(--btn-danger);
+  border-radius: 25px;
+  display: none;
+}
+
+#printerBtn {
+  background-color: var(--btn-warning);
+  color: var(--btn-warning-text);
+  border-radius: 25px;
+  display: none;
+}
+
+#image-container img, #cropped-image-container img {
+  max-width: 100%;
+  max-height: 300px;
+  display: block;
+  margin: 20px auto;
+}
+
+.card-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.card {
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  margin: 20px 0;
+}
+
+.card-header {
+  background-color: #F1F5F4;
+  padding: 20px;
+  color: var(--tertiary);
+  text-align: center;
+}
+
+.card-body {
+  padding: 20px;
+  overflow-x: auto;
+  text-align: justify;
+}
+
+.label {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  white-space: nowrap;
+}
+
+.label .bar {
+  height: 20px;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+.label .high {
+  background-color: #43a047;
+}
+
+.label .medium {
+  background-color: #fbc02d;
+}
+
+.label .low {
+  background-color: #e53935;
+}
+
+.label .text {
+  flex-grow: 1;
+  color: #1c3f6d;
+  overflow: visible;
+  text-overflow: clip;
+}
+
+.footer {
+  text-align: center;
+  font-size: 0.9em;
+  color: #1c3f6d;
+  margin-top: 20px;
+  width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .card-container {
+    width: 100%;
+  }
+
+  label,
+  button {
+    font-size: 1em;
+    padding: 8px 16px;
+  }
+}
+
+@media screen and (max-width: 430px) {
+  h1 {
+    font-size: 1.9em;
+  }
+
+  .container {
+    width: 100%;
+    padding: 2px;
+  }
+
+  label,
+  button {
+    font-size: 1em;
+    padding: 8px 16px;
+  }
+}
+
+/* Adicionando CSS específico para impressão */
+@media print {
+  .card-container {
+    display: block;
+    width: 100%;
+    margin: 0 auto;
+  }
+  
+  .label {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    white-space: nowrap;
+    justify-content: space-between;
+  }
+
+  .label .bar {
+    height: 20px;
+    border-radius: 5px;
+    margin-right: 10px;
+    flex-grow: 1;
+    background-color: inherit;
+  }
+
+  .label .high {
+    background-color: #43a047 !important;
+  }
+
+  .label .medium {
+    background-color: #fbc02d !important;
+  }
+
+  .label .low {
+    background-color: #e53935 !important;
+  }
+
+  .label .text {
+    color: #000;
+    flex-grow: 1;
+    text-overflow: clip;
+    overflow: visible;
+  }
+
+  #helpSection, #resetBtn, #printerBtn {
+    display: none;
+  }
+}

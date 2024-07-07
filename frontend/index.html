@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8">
+  <title>OTOSCOP-I.A</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.css" rel="stylesheet">
+</head>
+<body>
+  <div class="container mt-3">
+    <h2 class="text-center mb-3"><strong>Otoscop.I.A</strong></h2>
+    <div class="d-flex justify-content-center flex-column align-items-center mb-3">
+      <input type="file" id="imageUpload" accept="image/*" class="d-none">
+      <label for="imageUpload" class="btn btn-outline-primary mb-3">Escolha uma imagem</label>
+      <button id="helpBtn" class="btn btn-info">Ajuda</button>
+    </div>
+    <div id="helpSection" class="mt-3">
+      <div class="card">
+        <div class="card-header">
+          <strong>Passo-a-Passo</strong>
+        </div>
+        <div class="card-body">
+          <ol>
+            <li>Clique no botão "Escolha uma imagem" e selecione a imagem que deseja analisar.</li>
+            <li>Use a ferramenta de recorte para selecionar a área da imagem que deseja classificar.</li>
+            <li>Clique no botão "Cortar Imagem" para confirmar o recorte.</li>
+            <li>Após o recorte, clique no botão "Classificar Imagem" para obter o resultado.</li>
+            <li>O resultado será exibido com as classificações e probabilidades.</li>
+            <li>Você pode clicar em "Imprimir Resultado" para imprimir a parte central do resultado.</li>
+            <li>Clique em "Reset" para iniciar um novo processo.</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+    <div class="alert alert-warning text-center mt-3" role="alert">
+      <p><strong>*Atenção:</strong> Nosso software médico é um suplemento informativo, não um substituto para a orientação de um profissional de saúde.</p>
+      <p>Consulte sempre um médico licenciado para avaliações e tratamentos. Entre em contato conosco para mais informações.</p>
+    </div>
+    <div class="card-container">
+      <div class="card mt-2">
+        <div class="card-header">
+          <p>Resultado</p>
+        </div>
+        <div class="card-body">
+          <div id="image-container">
+            <!-- Imagem carregada será adicionada aqui -->
+          </div>
+          <div id="cropped-image-container"></div>
+          <div id="label-container"></div>
+        </div>
+      </div>
+    </div>
+    <div class="text-center mt-3">
+      <button id="cropBtn" class="btn btn-primary">Cortar Imagem</button>
+      <button id="classifyBtn" class="btn btn-success">Classificar Imagem</button>
+    </div>
+    <div class="text-center mt-3 button-container">
+      <button id="resetBtn" class="btn btn-danger">Reset</button>
+      <button id="printerBtn" class="btn btn-warning">Imprimir Resultado</button>
+    </div>
+    <footer class="footer">Produced by Dr. Dario Hart. Apoio OTOSIG - Telemedicina</footer>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
